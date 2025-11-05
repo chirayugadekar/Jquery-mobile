@@ -1,109 +1,167 @@
-<!doctype html> 
-<html> 
-<head> 
-<meta charset="utf-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<link rel="stylesheet" href="style.css"> 
-<title>jQuery Mobile Demo</title> 
-<!-- jQuery --> 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
-<!-- jQuery Mobile CSS + JS (CDN) --> 
-<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile- 
-1.4.5.min.css" /> 
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
-<style> 
-/* small extra styling */ 
-.logo { font-weight:700; font-size:1.2rem; } 
-</style> 
-</head> 
-<body> 
-<!-- Home page --> 
-<div data-role="page" id="home"> 
-<div data-role="header"> 
-<h1 class="logo">My Mobile Site</h1> 
-</div> 
-<div role="main" class="ui-content"> 
-<h2>Welcome!</h2> 
-<p>Simple mobile-friendly page built with jQuery Mobile.</p> 
-<a href="#about" class="ui-btn ui-corner-all ui-shadow">About</a> 
-<a href="#contact" class="ui-btn ui-corner-all ui-shadow ui-btn-inline">Contact</a> 
-<fieldset class="ui-grid-a" style="margin-top:1rem;"> 
-<div class="ui-block-a"><a href="#gallery" class="ui-btn">Gallery</a></div> 
-<div class="ui-block-b"><a href="#form" class="ui-btn">Form</a></div> 
-</fieldset> 
-</div> 
-<div data-role="footer"> 
-<h4>© 2025</h4> 
-</div> 
-</div> 
-<!-- About page --> 
-<div data-role="page" id="about"> 
-<div data-role="header"> 
-<a href="#home" data-icon="home" class="ui-btn-left ui-btn ui-icon-home ui-btn-icon- 
-notext">Home</a> 
-<h1>About</h1> 
-</div> 
-<div role="main" class="ui-content"> 
-<p>This site demonstrates multi-page navigation, buttons, grid and forms using jQuery 
-Mobile.</p> 
-<a href="#home" class="ui-btn ui-corner-all">Back</a> 
-</div> 
-<div data-role="footer"><h4>About Footer</h4></div> 
-</div> 
-<!-- Contact page --> 
-<div data-role="page" id="contact"> 
-<div data-role="header"><h1>Contact</h1></div> 
-<div role="main" class="ui-content"> 
-<p>Email: <a href="mailto:info@example.com">adityagorate@gmail.com</a></p> 
-<a href="#home" class="ui-btn ui-corner-all">Back</a> 
-</div> 
-<div data-role="footer"><h4>Contact Footer</h4></div> 
-</div> 
-<!-- Gallery page --> 
-<div data-role="page" id="gallery"> 
-<div data-role="header"><h1>Gallery</h1></div> 
-<div role="main" class="ui-content"> 
-<ul data-role="listview" data-inset="true"> 
-<li><img src="image1.jpg" alt="1"><h2>Image 1</h2></li> 
-<li><img src="image2.png" alt="2"><h2>Image 2</h2></li> 
-<li><img src="image3.webp" alt="3"><h2>Image 3</h2></li> 
-</ul> 
-<a href="#home" class="ui-btn">Back</a> 
-</div> 
-<div data-role="footer"><h4>Gallery Footer</h4></div> 
-</div> 
-<!-- Form page --> 
-<div data-role="page" id="form"> 
-<div data-role="header"><h1>Signup</h1></div> 
-<div role="main" class="ui-content"> 
-<form> 
-<label for="name">Name</label> 
-<input type="text" name="name" id="name" placeholder="Your name"> 
-<label for="email">Email</label> 
-<input type="email" name="email" id="email" placeholder="you@example.com"> 
-<label for="service">Choose service</label> 
-<select name="service" id="service"> 
-<option>Basic</option> 
-<option>Pro</option> 
-<option>Enterprise</option> 
-</select> 
-<input type="button" id="submitBtn" value="Submit" class="ui-btn ui-corner-all" /> 
-</form> 
-<div id="msg" style="margin-top:1rem;"></div> 
-<a href="#home" class="ui-btn ui-mini ui-corner-all">Back</a> 
-</div> 
-<div data-role="footer"><h4>Form Footer</h4></div> 
-</div> 
-<script> 
-// simple client-side handler for demo 
-$('#submitBtn').on('click', function() { 
-const name = $('#name').val() || 'Guest'; 
-const email = $('#email').val() || 'no-email'; 
-$('#msg').html('<div class="ui-body ui-body-a ui-corner-all">Thanks, ' + 
-$('<div>').text(name).html() + '! We will contact you at ' + $('<div>').text(email).html() + 
-'.</div>'); 
-}); 
-</script> 
-</body> 
-</html> 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple jQuery Mobile Site</title>
 
+  <!-- jQuery Mobile CSS (1.4.5) -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+  <style>
+    /* Small custom styles to keep look neat on mobile */
+    .logo { font-weight: 700; font-size: 1.1rem; }
+    .hero-img { width: 100%; height: auto; border-radius: 6px; }
+    .footer-note { font-size: 0.85rem; text-align: center; padding: 6px; }
+  </style>
+</head>
+<body>
+
+  <!-- Page: Home -->
+  <div data-role="page" id="home">
+    <div data-role="header" data-position="fixed">
+      <h1 class="logo">My Mobile Site</h1>
+      <a href="#menu" class="ui-btn ui-btn-inline ui-corner-all ui-icon-bars ui-btn-icon-notext" data-rel="popup">Menu</a>
+    </div>
+
+    <div role="main" class="ui-content">
+      <img src="https://placehold.co/600x240?text=Welcome" alt="hero" class="hero-img">
+      <h2>Welcome</h2>
+      <p>This is a simple single-file mobile website built with <strong>jQuery Mobile</strong>. Use the navigation below to explore pages.</p>
+
+      <ul data-role="listview" data-inset="true">
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div data-role="collapsible" data-collapsed-icon="plus" data-expanded-icon="minus">
+        <h3>Quick Tips</h3>
+        <p>Tap links to move between pages. This demo uses jQuery Mobile's multi-page template (every page in one HTML file).</p>
+      </div>
+    </div>
+
+    <div data-role="footer" data-position="fixed">
+      <h4 class="footer-note">© My Mobile Site</h4>
+    </div>
+
+    <!-- Popup menu -->
+    <div data-role="popup" id="menu" data-theme="a">
+      <ul data-role="listview" style="min-width:150px;" data-inset="false">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Page: About -->
+  <div data-role="page" id="about">
+    <div data-role="header">
+      <a href="#home" data-icon="back">Back</a>
+      <h1>About</h1>
+    </div>
+    <div role="main" class="ui-content">
+      <h2>About This Demo</h2>
+      <p>Built with jQuery Mobile (1.4.5). It demonstrates pages, listviews, collapsibles, popups and a simple contact form. It's responsive and touch-friendly.</p>
+
+      <div data-role="collapsible-set">
+        <div data-role="collapsible">
+          <h3>Why jQuery Mobile?</h3>
+          <p>Easy to build multi-page sites in a single HTML file with ready UI widgets and theming for mobile devices.</p>
+        </div>
+        <div data-role="collapsible">
+          <h3>Limitations</h3>
+          <p>jQuery Mobile is mature but not actively developed like modern frameworks (React/Vue). It's great for quick prototypes.</p>
+        </div>
+      </div>
+    </div>
+    <div data-role="footer">
+      <h4 class="footer-note">Made with ❤️ jQuery Mobile</h4>
+    </div>
+  </div>
+
+  <!-- Page: Gallery -->
+  <div data-role="page" id="gallery">
+    <div data-role="header">
+      <a href="#home" data-icon="back">Back</a>
+      <h1>Gallery</h1>
+    </div>
+    <div role="main" class="ui-content">
+      <h2>Images</h2>
+      <ul data-role="listview" data-inset="true">
+        <li><img src="https://placehold.co/400x200?text=Image+1" alt="1" class="hero-img"></li>
+        <li><img src="https://placehold.co/400x200?text=Image+2" alt="2" class="hero-img"></li>
+        <li><img src="https://placehold.co/400x200?text=Image+3" alt="3" class="hero-img"></li>
+      </ul>
+    </div>
+    <div data-role="footer">
+      <h4 class="footer-note">Tap an image to view (demo)</h4>
+    </div>
+  </div>
+
+  <!-- Page: Contact -->
+  <div data-role="page" id="contact">
+    <div data-role="header">
+      <a href="#home" data-icon="back">Back</a>
+      <h1>Contact</h1>
+    </div>
+    <div role="main" class="ui-content">
+      <h2>Send a Message</h2>
+      <form id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Your name">
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="you@example.com">
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" placeholder="Type your message..."></textarea>
+
+        <button type="submit" class="ui-btn ui-corner-all ui-shadow">Send</button>
+      </form>
+
+      <div id="thanks" style="display:none; margin-top:12px;">
+        <h3>Thanks!</h3>
+        <p>Your message was received (demo).</p>
+      </div>
+    </div>
+    <div data-role="footer">
+      <h4 class="footer-note">We will reply soon (demo)</h4>
+    </div>
+  </div>
+
+  <!-- jQuery and jQuery Mobile JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+  <script>
+    // Simple client-side form handling
+    $(document).on('pagecreate', function () {
+      $('#contactForm').on('submit', function (e) {
+        e.preventDefault();
+        var name = $('#name').val().trim();
+        var email = $('#email').val().trim();
+        var message = $('#message').val().trim();
+
+        if (!name || !email || !message) {
+          // show a simple alert style popup using jQuery Mobile dialog
+          $('<div data-role="popup" id="errPopup" class="ui-content"><p>Please fill all fields.</p></div>')
+            .appendTo($.mobile.pageContainer)
+            .popup().popup('open')
+            .on('popupafterclose', function () { $(this).remove(); });
+          return;
+        }
+
+        // For demo: pretend to send and show thank you
+        $('#contactForm').hide();
+        $('#thanks').show();
+      });
+
+      // Optional: enable list filtering by entering text in a search (example)
+      // Add a search input and filter the list (Gallery images are simple here, so demo only)
+    });
+  </script>
+</body>
+</html>
