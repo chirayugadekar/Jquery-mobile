@@ -3,16 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Simple jQuery Mobile Site</title>
+  <title>Stylish Mobile Site</title>
 
-  <!-- jQuery Mobile CSS (1.4.5) -->
+  <!-- jQuery Mobile CSS -->
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
   <style>
-    /* Small custom styles to keep look neat on mobile */
-    .logo { font-weight: 700; font-size: 1.1rem; }
-    .hero-img { width: 100%; height: auto; border-radius: 6px; }
-    .footer-note { font-size: 0.85rem; text-align: center; padding: 6px; }
+    body {
+      background-color: #f4f6f8;
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #0078d7;
+      text-shadow: none;
+    }
+    .hero-img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    .ui-page-theme-a .ui-btn {
+      background: linear-gradient(45deg, #0078d7, #00bcd4);
+      color: #fff !important;
+      border: none;
+    }
+    .ui-header, .ui-footer {
+      background: linear-gradient(45deg, #0078d7, #00bcd4);
+      color: white !important;
+      text-shadow: none;
+    }
+    .footer-note {
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 6px;
+    }
+    .ui-collapsible-heading-toggle {
+      background: #e1f5fe !important;
+      color: #0277bd !important;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
@@ -25,9 +57,9 @@
     </div>
 
     <div role="main" class="ui-content">
-      <img src="https://placehold.co/600x240?text=Welcome" alt="hero" class="hero-img">
+      <a href="https://ibb.co/fzcb6HtR"><img src="https://i.ibb.co/W4TQ8fF9/d7a5917d-70a9-4baf-9531-7ed4d81c5421.jpg" alt="welcome image" class="hero-img"></a>
       <h2>Welcome</h2>
-      <p>This is a simple single-file mobile website built with <strong>jQuery Mobile</strong>. Use the navigation below to explore pages.</p>
+      <p>This is a stylish mobile website built using <strong>jQuery Mobile</strong>. Use the menu below to explore more sections.</p>
 
       <ul data-role="listview" data-inset="true">
         <li><a href="#about">About</a></li>
@@ -37,15 +69,14 @@
 
       <div data-role="collapsible" data-collapsed-icon="plus" data-expanded-icon="minus">
         <h3>Quick Tips</h3>
-        <p>Tap links to move between pages. This demo uses jQuery Mobile's multi-page template (every page in one HTML file).</p>
+        <p>Swipe or tap on navigation links to explore. This site demonstrates a clean and elegant mobile-first design.</p>
       </div>
     </div>
 
     <div data-role="footer" data-position="fixed">
-      <h4 class="footer-note">© My Mobile Site</h4>
+      <h4 class="footer-note">© 2025 My Mobile Site</h4>
     </div>
 
-    <!-- Popup menu -->
     <div data-role="popup" id="menu" data-theme="a">
       <ul data-role="listview" style="min-width:150px;" data-inset="false">
         <li><a href="#home">Home</a></li>
@@ -63,22 +94,22 @@
       <h1>About</h1>
     </div>
     <div role="main" class="ui-content">
-      <h2>About This Demo</h2>
-      <p>Built with jQuery Mobile (1.4.5). It demonstrates pages, listviews, collapsibles, popups and a simple contact form. It's responsive and touch-friendly.</p>
+      <h2>About This Site</h2>
+      <p>This website is built using jQuery Mobile 1.4.5, styled with custom CSS for a modern mobile appearance. It demonstrates navigation, collapsibles, and popups.</p>
 
       <div data-role="collapsible-set">
         <div data-role="collapsible">
-          <h3>Why jQuery Mobile?</h3>
-          <p>Easy to build multi-page sites in a single HTML file with ready UI widgets and theming for mobile devices.</p>
+          <h3>Why Use jQuery Mobile?</h3>
+          <p>It's quick to create interactive, mobile-friendly web pages without complex coding.</p>
         </div>
         <div data-role="collapsible">
-          <h3>Limitations</h3>
-          <p>jQuery Mobile is mature but not actively developed like modern frameworks (React/Vue). It's great for quick prototypes.</p>
+          <h3>Features</h3>
+          <p>Multi-page design, responsive layout, and touch-optimized UI.</p>
         </div>
       </div>
     </div>
     <div data-role="footer">
-      <h4 class="footer-note">Made with ❤️ jQuery Mobile</h4>
+      <h4 class="footer-note">Made with ❤️ using jQuery Mobile</h4>
     </div>
   </div>
 
@@ -89,15 +120,14 @@
       <h1>Gallery</h1>
     </div>
     <div role="main" class="ui-content">
-      <h2>Images</h2>
+      <h2>Photo Gallery</h2>
       <ul data-role="listview" data-inset="true">
-        <li><img src="https://placehold.co/400x200?text=Image+1" alt="1" class="hero-img"></li>
-        <li><img src="https://placehold.co/400x200?text=Image+2" alt="2" class="hero-img"></li>
-        <li><img src="https://placehold.co/400x200?text=Image+3" alt="3" class="hero-img"></li>
+        <li><a href="https://ibb.co/rGMXYvmN"><img src="https://i.ibb.co/SX0ZbJPG/50647347593-ecc150826b-o.jpg" alt="image1" class="hero-img"></a></li>
+        <li><a href="https://imgbb.com/"><img src="https://i.ibb.co/VXMtrrW/images.jpg" alt="image2" class="hero-img"></a></li>
       </ul>
     </div>
     <div data-role="footer">
-      <h4 class="footer-note">Tap an image to view (demo)</h4>
+      <h4 class="footer-note">Beautiful gallery powered by jQuery Mobile</h4>
     </div>
   </div>
 
@@ -108,7 +138,7 @@
       <h1>Contact</h1>
     </div>
     <div role="main" class="ui-content">
-      <h2>Send a Message</h2>
+      <h2>Get in Touch</h2>
       <form id="contactForm">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" placeholder="Your name">
@@ -124,7 +154,7 @@
 
       <div id="thanks" style="display:none; margin-top:12px;">
         <h3>Thanks!</h3>
-        <p>Your message was received (demo).</p>
+        <p>Your message was received successfully (demo).</p>
       </div>
     </div>
     <div data-role="footer">
@@ -132,12 +162,10 @@
     </div>
   </div>
 
-  <!-- jQuery and jQuery Mobile JS -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
   <script>
-    // Simple client-side form handling
     $(document).on('pagecreate', function () {
       $('#contactForm').on('submit', function (e) {
         e.preventDefault();
@@ -146,7 +174,6 @@
         var message = $('#message').val().trim();
 
         if (!name || !email || !message) {
-          // show a simple alert style popup using jQuery Mobile dialog
           $('<div data-role="popup" id="errPopup" class="ui-content"><p>Please fill all fields.</p></div>')
             .appendTo($.mobile.pageContainer)
             .popup().popup('open')
@@ -154,13 +181,9 @@
           return;
         }
 
-        // For demo: pretend to send and show thank you
         $('#contactForm').hide();
         $('#thanks').show();
       });
-
-      // Optional: enable list filtering by entering text in a search (example)
-      // Add a search input and filter the list (Gallery images are simple here, so demo only)
     });
   </script>
 </body>
